@@ -6,7 +6,7 @@
 
 Give your agent a full desktop environment — files, email, calendar, Slack, Telegram, a browser, and a terminal. Watch it work in real time, take over anytime, collaborate mid-task.
 
-[**Try it**](https://construct.computer) &nbsp;&middot;&nbsp; [**Web Desktop**](https://github.com/construct-computer/web-desktop) &nbsp;&middot;&nbsp; [**App Registry**](https://github.com/construct-computer/app-registry) &nbsp;&middot;&nbsp; [**macOS Companion**](https://github.com/construct-computer/notch)
+[**Try it**](https://construct.computer) &nbsp;&middot;&nbsp; [**App Store**](https://registry.construct.computer) &nbsp;&middot;&nbsp; [**Docs**](https://registry.construct.computer/publish)
 
 </div>
 
@@ -22,25 +22,37 @@ Construct is a serverless AI agent platform. Instead of chatting *about* tasks, 
 - **20+ built-in tools** — file management, web search, email, calendar, code execution, and more
 - **Extensible with apps** — standard MCP servers that plug into the platform
 
-### Repositories
+### Platform
 
 | Repo | Description |
 |------|-------------|
-| [**web-desktop**](https://github.com/construct-computer/web-desktop) | React + TypeScript desktop environment — the browser-based OS |
+| [**construct**](https://github.com/construct-computer/construct) | Core platform — agent backend, API, and deployment |
+| [**web-desktop**](https://github.com/construct-computer/web-desktop) | React + TypeScript desktop environment (the browser-based OS) |
 | [**notch**](https://github.com/construct-computer/notch) | macOS companion app that lives in the MacBook notch |
-| [**app-registry**](https://github.com/construct-computer/app-registry) | Registry of installable MCP apps for the platform |
-| [**construct-app-sample**](https://github.com/construct-computer/construct-app-sample) | Starter template for building Construct apps |
-| [**construct-app-mercadolibre**](https://github.com/construct-computer/construct-app-mercadolibre) | MercadoLibre integration — 21 tools for product search, orders, and more |
+
+### Apps & Registry
+
+| Repo | Description |
+|------|-------------|
+| [**app-registry**](https://github.com/construct-computer/app-registry) | App store — registry of installable MCP apps |
+| [**construct-app-sample**](https://github.com/construct-computer/construct-app-sample) | Reference app — developer toolkit with 6 tools + UI |
+| [**construct-app-mercadolibre**](https://github.com/construct-computer/construct-app-mercadolibre) | MercadoLibre integration — 21 tools for e-commerce |
+
+### Developer Tools
+
+| Package | Version | Description |
+|---------|---------|-------------|
+| [`@construct-computer/app-sdk`](https://www.npmjs.com/package/@construct-computer/app-sdk) | [![npm](https://img.shields.io/npm/v/@construct-computer/app-sdk?color=blue)](https://www.npmjs.com/package/@construct-computer/app-sdk) | SDK for building Construct apps |
+| [`@construct-computer/create-construct-app`](https://www.npmjs.com/package/@construct-computer/create-construct-app) | [![npm](https://img.shields.io/npm/v/@construct-computer/create-construct-app?color=blue)](https://www.npmjs.com/package/@construct-computer/create-construct-app) | Scaffold a new app in seconds |
 
 ### Build an App
 
-Construct apps are standard [MCP servers](https://modelcontextprotocol.io). Write your tools in any language, publish to the registry, and every Construct user can install them.
-
 ```bash
-# Clone the starter template
-git clone https://github.com/construct-computer/construct-app-sample
-cd construct-app-sample
-npm install && npm start
+npx @construct-computer/create-construct-app my-app
+cd my-app
+npm install && npm run dev
 ```
 
-See the [app registry](https://github.com/construct-computer/app-registry) for publishing details.
+Test locally with curl, then install in Construct via **App Registry > Installed > Developer Tools > Install from URL**.
+
+Publish to the store by opening a PR on [app-registry](https://github.com/construct-computer/app-registry). See the [publishing guide](https://registry.construct.computer/publish) for details.
